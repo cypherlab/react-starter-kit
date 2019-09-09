@@ -23,7 +23,7 @@ yarn add -D rollup rollup-plugin-babel rollup-plugin-commonjs rollup-plugin-node
 yarn add -D react react-dom
 ```
 
-## Realse 
+## Release 
 
 ```js
 (npm|yarn) run release
