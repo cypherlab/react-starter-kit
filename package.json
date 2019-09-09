@@ -10,7 +10,7 @@
   "main": "dist/index.js",
   "scripts": {
     "watch": "npx rollup -c -w",
-    "dev": "npm run watch > /dev/null | npx serv",
+    "dev": "NODE_ENV=dev npm run watch",
     "build": "npx rollup -c",
     "prepare": "npm run build",
     "release": "np --no-publish --skip-cleanup --no-tests --no-release-draft"
@@ -35,7 +35,9 @@
     "rollup": "^1.20.3",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-livereload": "^1.0.1",
     "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-terser": "^5.1.1"
   },
   "dependencies": {}

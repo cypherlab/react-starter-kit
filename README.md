@@ -11,9 +11,14 @@ React Starter Kit
 
 ## Install
 ```
+// clone & install deps
 git clone git@github.com:cypherlab/react-starter-kit.git
 yarn install
+
+// start coding
+yarn run dev
 ```
+
 
 ## Update deps (if needed)
 
@@ -23,11 +28,18 @@ yarn add -D rollup rollup-plugin-babel rollup-plugin-commonjs rollup-plugin-node
 yarn add -D react react-dom
 ```
 
+## Feature
+
+- es6 only
+- livereload
+
+
 ## Release 
 
 ```js
 (npm|yarn) run release
 ```
+
 
 ## Test 
 
@@ -35,5 +47,4 @@ You can play with the component in the browser via the `index.html` test file in
 
 ```js
 (npm|yarn) run dev
-browse to http://localhost:8000/test/
 ```
