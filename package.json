@@ -1,6 +1,6 @@
 {
   "name": "@cypherlab/react-starter-kit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React Starter Kit ",
   "author": "Louis Grellet <louis.grellet@gmail.com>",
   "license": "ISC",
@@ -16,7 +16,8 @@
     "release": "np --no-publish --no-tests --no-release-draft"
   },
   "files": [
-    "dist", "src"
+    "dist",
+    "src"
   ],
   "babel": {
     "presets": [
