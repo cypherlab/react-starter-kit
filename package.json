@@ -1,0 +1,41 @@
+{
+  "name": "@cypherlab/react-starter-kit",
+  "version": "0.0.1",
+  "description": "React Stater Kit ",
+  "author": "Louis Grellet <louis.grellet@gmail.com>",
+  "license": "ISC",
+  "repository": "https://github.com/cypherlab/react-starter-kit",
+  "source": "src/index.js",
+  "module": "src/index.js",
+  "main": "dist/index.js",
+  "scripts": {
+    "watch": "npx rollup -c -w",
+    "dev": "npm run watch > /dev/null | npx serv",
+    "build": "npx rollup -c",
+    "prepare": "npm run build",
+    "publish": "np --no-publish --no-tests --no-release-draft"
+  },
+  "files": [
+    "dist"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "@babel/preset-env"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "rollup": "^1.20.3",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.1"
+  },
+  "dependencies": {}
+}

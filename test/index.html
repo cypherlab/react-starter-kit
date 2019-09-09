@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>react-starter-kit</title>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <link href="https://unpkg.com/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <div class="p-5 m-auto col-6 text-center">
+      <div id="root"></div>
+    </div>
+
+    <script async type="module">
+
+      import MyComponent from '../dist/index.js'
+
+      (async () => {
+
+        // const res = await fetch('https://raw.githubusercontent.com/bitcoin/bips/master/bip-0039/english.txt')
+        // const text = await res.text()
+
+        const props = {}
+        
+        ReactDOM.render(MyComponent(props), document.getElementById('root'))
+
+      })()
+
+    </script>
+
+  </body>
+</html>
