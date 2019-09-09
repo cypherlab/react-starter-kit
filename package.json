@@ -13,7 +13,7 @@
     "dev": "npm run watch > /dev/null | npx serv",
     "build": "npx rollup -c",
     "prepare": "npm run build",
-    "publish": "np --no-publish --no-tests --no-release-draft"
+    "release": "np --no-publish --no-tests --no-release-draft"
   },
   "files": [
     "dist"
