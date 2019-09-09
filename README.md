@@ -43,7 +43,7 @@ yarn add -D react react-dom
 
 ## Test 
 
-You can play with the component in the browser via the `index.html` test file in the `test` folder.
+You can play with the component in the browser via the `index.html`.
 
 ```js
 (npm|yarn) run dev
