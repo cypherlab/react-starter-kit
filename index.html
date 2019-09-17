@@ -13,9 +13,14 @@
 
     <script async type="module">
 
-      import MyComponent from '/dist/index.js'
+      import esmImport from 'https://unpkg.com/@cypherlab/esm-import'
 
       (async () => {
+
+        const MyComponent = await esmImport([ 
+            `${document.location.origin}/dist/index.js`
+          // , 'https://unpkg.com/yourRemotePackage' 
+        ])
 
         // fetch some data for the props
         // const res = await fetch('https://raw.githubusercontent.com/bitcoin/bips/master/bip-0039/english.txt')
@@ -23,7 +28,7 @@
 
         const props = {}
         
-        ReactDOM.render(MyComponent(props), document.getElementById('root'))
+        ReactDOM.render(React.createElement(MyComponent, props), document.getElementById('root'))
 
       })()
 

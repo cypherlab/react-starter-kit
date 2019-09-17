@@ -1,22 +1,42 @@
 # `@cypherlab/react-starter-kit`
 
 
-React Starter Kit
-
-<!--- NPM basge
-<a href="https://www.npmjs.com/package/@cypherlab/react-starter-kit">
-  <img alt="npm" src="https://img.shields.io/npm/v/@cypherlab/react-starter-kit">
-</a>
+<p align="center">
+  <img width="300" alt="screenshot" src="https://user-images.githubusercontent.com/503577/65078746-f2510680-d99d-11e9-991b-b6aed436aec2.png">
+</p>
+<p align="center">
+  React Starter Kit
+</p>
+<!--- NPM badges
+<p align="center">
+  <a href="https://www.npmjs.com/package/@cypherlab/react-starter-kit">
+    <img alt="npm" src="https://img.shields.io/npm/v/@cypherlab/react-starter-kit">
+  </a>
+  <img alt="NPM badge" src="https://img.shields.io/npm/l/@cypherlab/react-starter-kit">
+</p>
 -->
 
 ## Install
 ```
-// clone & install deps
-git clone git@github.com:cypherlab/react-starter-kit.git
+// clone repo
+git clone git@github.com:cypherlab/react-starter-kit.git my-project
+cd my-project
+
+// remove git repo
+rm -rf .git && git init
+
+// install deps
 yarn install
 
 // start coding
 yarn run dev
+```
+
+Don't forget to chnage your git remote origin to your repo:
+```
+> .git/config
+[remote "origin"]
+  url = git@github.com:cypherlab/react-starter-kit.git
 ```
 
 
@@ -30,8 +50,8 @@ yarn add -D react react-dom
 
 ## Feature
 
-- es6 only
-- livereload
+- es6 full support
+- live reloading
 
 
 ## Release 
