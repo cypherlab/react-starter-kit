@@ -56,6 +56,8 @@ yarn add -D react react-dom
 
 ## Release 
 
+Don't forget to remove the `--no-publish --skip-cleanup --no-tests --no-release-draft` args in the package.json `release` script:
+
 ```js
 (npm|yarn) run release
 ```
