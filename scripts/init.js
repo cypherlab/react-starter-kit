@@ -31,7 +31,7 @@ import { mkdir, rmdir, read, write, handlebars } from './utils'
   const input = cli.input
   const flags = cli.flags
 
-  const dest = '.' || mkdir('./test')
+  const dest = '.' //|| mkdir('./test')
   const clean = cli.flags.clean
   const project = input[0] || __dirname.split('/').reverse()[1]
 
@@ -52,15 +52,9 @@ import { mkdir, rmdir, read, write, handlebars } from './utils'
   log(`+ index.html`)
 
   // create package.json  
-  const pkg = read(`./package.json`, 'json')
-  const devPkgs = ['handlebars', 'meow', 'yargs', 'execa', 'del']
+  const pkg = read(`./assets/package.json`, 'json')
   pkg.name = project
   pkg.description = project
-  pkg.version = '0.0.1'
-  pkg.scripts.release = 'np'
-  delete pkg.author
-  delete pkg.scripts.init
-  devPkgs.map(m => (delete pkg.devDependencies[m]))
   write(`${dest}/package.json`, pkg, 'json')
   log(`+ package.json`)
 
