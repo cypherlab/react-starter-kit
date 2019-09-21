@@ -61,22 +61,26 @@ import { mkdir, rmdir, read, write, handlebars, parseName } from './utils'
   write(`${dest}/package.json`, pkg, 'json')
   log(`+ package.json`)
 
-  // if(clean){
-  //   await rmdir(`./scripts`)
-  //   log(`- scripts`)
+  if(clean){
     
-  //   await rmdir(`./assets`)
-  //   log(`- assets`)
+    await rmdir(`./__dry`)
+    log(`- __dry/`)
 
-  //   await rmdir(`./.git`)
-  //   log(`- .git`)
+    await rmdir(`./scripts`)
+    log(`- scripts/`)
     
-  //   await execa('git init', { shell: true })
-  //   log(`> git init`)
+    await rmdir(`./assets`)
+    log(`- assets/`)
 
-  //   await execa('yarn install', { shell: true })
-  //   log(`> yarn install`)
-  // }
+    await rmdir(`./.git`)
+    log(`- .git/`)
+    
+    await execa('git init', { shell: true })
+    log(`> git init`)
+
+    await execa('yarn install', { shell: true })
+    log(`> yarn install`)
+  }
 
 
 })()
