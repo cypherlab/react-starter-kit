@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>{{project}}</title>
+    <!-- react dev
+    <script src="https://unpkg.com/react@16.9.0/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js" crossorigin></script>
+    -->
+    <!-- react prod -->
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <!-- bootstrap -->
+    <link href="https://unpkg.com/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <div class="">
+      <div id="root"></div>
+    </div>
+
+    <script async type="module">
+
+      import esmImport from 'https://unpkg.com/@cypherlab/esm-import'
+
+      (async () => {
+
+        const Playground = await esmImport([ 
+            `${document.location.origin}/dist/playground.js`
+          // , 'https://unpkg.com/{username}/{{project}}' 
+        ])
+
+        ReactDOM.render(
+            React.createElement(Playground, {})
+          , document.getElementById('root')
+        )
+
+      })()
+
+    </script>
+
+  </body>
+</html>

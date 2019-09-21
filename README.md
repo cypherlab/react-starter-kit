@@ -18,25 +18,29 @@
 
 ## Install
 ```
-// clone repo
-git clone git@github.com:cypherlab/react-starter-kit.git my-project
-cd my-project
+// clone this repo
+git clone git@github.com:cypherlab/react-starter-kit.git
 
-// remove git repo
-rm -rf .git && git init
-
-// install deps
-yarn install
+// init
+yarn run init my-cool-lib
 
 // start coding
 yarn run dev
 ```
 
-Don't forget to chnage your git remote origin to your repo:
-```
-> .git/config
-[remote "origin"]
-  url = git@github.com:cypherlab/react-starter-kit.git
+
+## Feature
+
+- es6 only
+- live reloading
+- playground
+- npm ready
+
+
+## Release 
+
+```js
+(npm|yarn) run release
 ```
 
 
@@ -47,21 +51,6 @@ yarn add -D @babel/cli @babel/core @babel/preset-env @babel/preset-react
 yarn add -D rollup rollup-plugin-babel rollup-plugin-commonjs rollup-plugin-node-resolve rollup-plugin-terser
 yarn add -D react react-dom
 ```
-
-## Feature
-
-- es6 full support
-- live reloading
-
-
-## Release 
-
-Don't forget to remove the `--no-publish --skip-cleanup --no-tests --no-release-draft` args in the package.json `release` script:
-
-```js
-(npm|yarn) run release
-```
-
 
 ## Test 
 

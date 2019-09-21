@@ -1,7 +1,7 @@
 {
   "name": "@cypherlab/react-starter-kit",
   "version": "0.0.7",
-  "description": "React Starter Kit ",
+  "description": "React Starter Kit",
   "author": "Louis Grellet <louis.grellet@gmail.com>",
   "license": "ISC",
   "repository": "https://github.com/cypherlab/react-starter-kit",
@@ -9,6 +9,7 @@
   "module": "src/index.js",
   "main": "dist/index.js",
   "scripts": {
+    "init": "npx babel-node scripts/init.js --clean",
     "watch": "npx rollup -c -w",
     "dev": "NODE_ENV=dev npm run watch",
     "build": "npx rollup -c",
@@ -28,17 +29,22 @@
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
+    "del": "^5.1.0",
+    "execa": "^2.0.4",
+    "handlebars": "^4.2.1",
+    "live-server": "^1.2.1",
+    "meow": "^5.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "rollup": "^1.20.3",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-livereload": "^1.0.1",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-serve": "^1.0.1",
-    "rollup-plugin-terser": "^5.1.1"
+    "rollup-plugin-terser": "^5.1.1",
+    "yargs": "^14.0.0"
   },
   "dependencies": {}
 }

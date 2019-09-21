@@ -1,12 +1,13 @@
 const pro = process.env.NODE_ENV == 'production'
 const dev = process.env.NODE_ENV == 'dev'
 
-import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
+import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
-import serve from 'rollup-plugin-serve'
-import livereload from 'rollup-plugin-livereload'
+import livereload from 'live-server'
+
+dev && livereload.start({ file: 'index.html', watch: ['dist/playground.js'] })
 
 export default [
     {
@@ -19,9 +20,20 @@ export default [
         babel(),
         resolve(),
         commonjs(),
-        terser(),
-        dev && serve({ contentBase: ['.'], open: true }),
-        dev && livereload()
+        terser()
+      ]
+    },
+    {
+      input: 'src/playground.js',
+      output: {
+        file: 'dist/playground.js',
+        format: 'es'      
+      },
+      plugins: [
+        babel(),
+        resolve(),
+        commonjs(),
+        terser()
       ]
     }
 ]
