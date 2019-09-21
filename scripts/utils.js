@@ -25,3 +25,16 @@ export const write = (file, data, json) => {
   data = json ? JSON.stringify(data, null, 2) : data
   return fs.writeFileSync(file, data, 'utf-8')
 }
+
+// parseName('@babel/node') => { name: '@babel/node', ns1: 'babel', ns2: 'node' }
+export const parseName = (name) => {
+  const p = { name, ns1: name, ns2: name }
+  const s = name.split('/')
+
+  if(s.length == 2){
+    p.ns1 = s[0].replace('@', '')
+    p.ns2 = s[1]
+  }
+
+  return p
+}

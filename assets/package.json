@@ -1,10 +1,10 @@
 {
-  "name": "{{project}}",
+  "name": "{{project.name}}",
   "version": "0.0.1",
-  "description": "{{project}}",
+  "description": "{{project.name}}",
   "author": "",
   "license": "ISC",
-  "repository": "https://github.com/{username}/{{project}}",
+  "repository": "",
   "source": "src/index.js",
   "module": "src/index.js",
   "main": "dist/index.js",

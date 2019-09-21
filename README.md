@@ -25,7 +25,7 @@ git clone git@github.com:cypherlab/react-starter-kit.git
 yarn install
 
 // init
-yarn run init my-cool-lib
+yarn run kit my-cool-lib
 
 // start coding
 yarn run dev

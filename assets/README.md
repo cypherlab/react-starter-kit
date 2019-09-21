@@ -1,38 +1,38 @@
-# `@cypherlab/{{project}}`
+# `{{project.name}}`
 
 <!--- Hero Image
 <p align="center">
-  <img width="300" alt="screenshot" src="https://user-images.githubusercontent.com/503577/65078746-f2510680-d99d-11e9-991b-b6aed436aec2.png">
+  <img width="300" alt="hero" src="">
 </p>
 -->
 <p align="center">
-  {{project}}
+  {{project.name}}
 </p>
 <!--- NPM badges
 <p align="center">
-  <a href="https://www.npmjs.com/package/@cypherlab/{{project}}">
-    <img alt="npm" src="https://img.shields.io/npm/v/@cypherlab/{{project}}">
+  <a href="https://www.npmjs.com/package/@cypherlab/{{project.name}}">
+    <img alt="npm version" src="https://img.shields.io/npm/v/{{project.name}}">
   </a>
-  <img alt="NPM badge" src="https://img.shields.io/npm/l/@cypherlab/{{project}}">
+  <img alt="lisence" src="https://img.shields.io/npm/l/{{project.name}}">
 </p>
 -->
 
 
 ## Install
 ```
-npm i {{project}}
+npm i {{project.name}}
 ```
 
 
 ## Usage 
 
 ```js
-import FooBar from '{{project}}'
+import FooBar from '{{project.name}}'
 
 <FooBar />
 ```
 
-See [Live demo](https://raw.githack.com/{GithubUsername}/{{project}}/master/index.html)  
+See [Live demo](https://raw.githack.com/{{project.ns1}}/{{project.ns2}}/master/index.html)  
 
 
 

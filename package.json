@@ -9,7 +9,8 @@
   "module": "src/index.js",
   "main": "dist/index.js",
   "scripts": {
-    "init": "npx babel-node scripts/init.js --clean",
+    "kit": "npx babel-node scripts/kit.js --ack",
+    "dry": "npx babel-node scripts/kit.js",
     "watch": "npx rollup -c -w",
     "dev": "NODE_ENV=dev npm run watch",
     "build": "npx rollup -c",
