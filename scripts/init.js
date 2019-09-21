@@ -68,7 +68,11 @@ import { mkdir, rmdir, read, write, handlebars } from './utils'
     await rmdir(`./.git`)
     log(`- .git`)
     
+    await execa('git init', { shell: true })
+    log(`> git init`)
+
     await execa('yarn install', { shell: true })
+    log(`> yarn install`)
   }
 
 
