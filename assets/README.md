@@ -20,7 +20,7 @@
 
 ## Install
 ```
-npm i {{project.name}}
+yarn add {{project.name}}
 ```
 
 
@@ -46,10 +46,11 @@ See [Live demo](https://raw.githack.com/{{project.ns1}}/{{project.ns2}}/master/i
 
 
 
-## Test 
+## Dev / Playground 
 
-You can play with the component in the browser via the `index.html`.
+Source files located in `src` directory.   
+Edit `src/playground.js` to build your playground.
 
 ```js
-(yarn|npm) run dev
+yarn run dev
 ```
