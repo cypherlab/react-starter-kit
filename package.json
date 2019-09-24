@@ -6,8 +6,9 @@
   "license": "ISC",
   "repository": "https://github.com/cypherlab/react-starter-kit",
   "source": "src/index.js",
-  "module": "src/index.js",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
   "scripts": {
     "kit": "npx babel-node scripts/kit.js --ack --clean",
     "dry": "npx babel-node scripts/kit.js",
@@ -30,7 +31,7 @@
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
-    "@babel/node": "^7.6.1",
+    "@babel/node": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
     "del": "^5.1.0",
@@ -44,8 +45,7 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^5.1.1",
-    "yargs": "^14.0.0"
+    "rollup-plugin-terser": "^5.1.1"
   },
   "dependencies": {}
 }

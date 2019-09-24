@@ -6,8 +6,9 @@
   "license": "ISC",
   "repository": "",
   "source": "src/index.js",
-  "module": "src/index.js",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
   "scripts": {
     "watch": "npx rollup -c -w",
     "dev": "NODE_ENV=dev npm run watch",
