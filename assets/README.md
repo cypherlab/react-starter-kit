@@ -10,7 +10,7 @@
 </p>
 <!--- NPM badges
 <p align="center">
-  <a href="https://www.npmjs.com/package/@cypherlab/{{project.name}}">
+  <a href="https://www.npmjs.com/package/{{project.name}}">
     <img alt="npm version" src="https://img.shields.io/npm/v/{{project.name}}">
   </a>
   <img alt="lisence" src="https://img.shields.io/npm/l/{{project.name}}">

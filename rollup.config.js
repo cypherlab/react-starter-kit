@@ -24,17 +24,21 @@ const config = [
     plugins,
     output: [
       {
-        file: pkg.browser,
-        format: 'umd',
-        globals,
-        exports: 'named',
-        name: 'MyLibName'
-      },
-      {
         file: pkg.main,
         format: 'cjs',
         globals,
         exports: 'named'
+      },
+      {
+        file: pkg.module,
+        format: 'es'
+      },
+      {
+        file: pkg.browser,
+        format: 'umd',
+        globals,
+        exports: 'named',
+        name: 'myLibName'
       }
     ]
   },
