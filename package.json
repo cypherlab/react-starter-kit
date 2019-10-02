@@ -10,8 +10,8 @@
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
   "scripts": {
-    "kit": "npx babel-node scripts/kit.js --ack --clean",
-    "dry": "npx babel-node scripts/kit.js",
+    "kit": "okk script kit --ack --clean",
+    "dry": "okk script kit",
     "watch": "npx rollup -c -w",
     "dev": "NODE_ENV=dev npm run watch",
     "build": "npx rollup -c",

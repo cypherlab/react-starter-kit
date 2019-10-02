@@ -21,11 +21,9 @@
 // clone this repo
 git clone git@github.com:cypherlab/react-starter-kit.git
 
-// install 
-yarn install
-
-// init
-yarn run kit my-cool-lib
+// init the kit (with @cypherlab/okk cli)
+okk script kit // will use current folder name as project name
+okk script kit @mycool/libname
 
 // start coding
 yarn run dev

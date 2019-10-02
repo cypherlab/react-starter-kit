@@ -1,7 +1,7 @@
 export default async ({ utils, okk }) => {
 
   // pull some utils fonctions
-  const { log, shell, mkdir, parseLibName, copyFlow } = utils
+  const { log, shell, mkdir, rmdir, parseLibName, copyFlow } = utils
 
   const dry = okk.dry
   const clean = dry ? false : okk.flags.clean
@@ -28,23 +28,23 @@ export default async ({ utils, okk }) => {
 
   if(clean){
     
-    await rmdir(`./__dry`)
     log(`- __dry/`)
+    await rmdir(`./__dry`)
 
-    await rmdir(`./scripts`)
     log(`- scripts/`)
+    await rmdir(`./scripts`)
     
-    await rmdir(`./assets`)
     log(`- assets/`)
+    await rmdir(`./assets`)
 
-    await rmdir(`./.git`)
     log(`- .git/`)
+    await rmdir(`./.git`)
     
-    await execa('git init', { shell: true })
     log(`> git init`)
+    shell.exec('git init')
 
-    await execa('yarn install', { shell: true })
     log(`> yarn install`)
+    shell.exec('yarn install')
   }
 
   return 0
