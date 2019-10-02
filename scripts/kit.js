@@ -1,65 +1,30 @@
-import meow from 'meow'
-import execa from 'execa'
-import { mkdir, rmdir, read, write, handlebars, parseName } from './utils'
+export default async ({ utils, okk }) => {
 
+  // pull some utils fonctions
+  const { log, shell, mkdir, parseLibName, copyFlow } = utils
 
-(async () => {
-
-
-  const cli = meow(`
-    Usage
-      $ kit <project-name>
-
-    Options
-      --ack,          dry run by default, specify this option to run real
-      --clean,        delete kit files
-      --playground,   include playground
-
-    Examples
-      $ npx babel-node scripts/kit.js
-  `, {
-    flags: {
-        ack: { type: 'boolean' }
-      , playground: { type: 'boolean' }
-      , clean: { type: 'boolean' }
-    }
-  })
-
-  const log = console.log
-  const input = cli.input
-  const flags = cli.flags
-
-  const dry = !flags.ack ? true : false
+  const dry = okk.dry
+  const clean = dry ? false : okk.flags.clean
   const dest = dry ? mkdir('./__dry') : '.'
-  const clean = dry ? false : cli.flags.clean
-  const project = parseName(input[0] || __dirname.split('/').reverse()[1])
-
-  // console.log('input', input)
-  // console.log('flags', flags)
-  // console.log('project', project)
-  // console.log('dry', dry)
-  // return 
-
-  // ----------------------------------------------------------------------------------
+  const project = parseLibName(okk.input[1] || __dirname.split('/').reverse()[1])
+  const bake = copyFlow(okk.cfg('dirs.assets'), dest)
 
   dry && log(`> ~~~~~~~~~ dry run, renders in "${dest}" folder.`)
-  log(`> init project "${project.name}"`)
+  log(`> initing project "${project.name}"`)
 
-  // create README.md file
-  write(`${dest}/README.md`, handlebars(read(`./assets/README.md`), { project }))
   log(`+ README.md`)
+  bake('README.md', { project })
 
-  // create index.html file
-  write(`${dest}/index.html`, handlebars(read(`./assets/index.html`), { project }))
   log(`+ index.html`)
+  bake(`index.html`, { project })
 
-  // create package.json  
-  const pkg = read(`./assets/package.json`, 'json')
-  pkg.name = project.name
-  pkg.description = project.name
-  pkg.repository = `https://github.com/${project.ns1}/${project.ns2}`
-  write(`${dest}/package.json`, pkg, 'json')
   log(`+ package.json`)
+  bake('package.json', pkg => {
+    pkg.name = project.name
+    pkg.description = project.name
+    pkg.repository = `https://github.com/${project.ns1}/${project.ns2}`
+    return pkg
+  })
 
   if(clean){
     
@@ -82,6 +47,5 @@ import { mkdir, rmdir, read, write, handlebars, parseName } from './utils'
     log(`> yarn install`)
   }
 
-
-})()
-
+  return 0
+}
